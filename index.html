@@ -38,7 +38,7 @@
 <body>
   <button id="prankButton">Натисни мене</button>
   <img src="scream.gif" alt="Scary GIF" id="prankImage" />
-  <audio id="prankSound" src="scream.mp3"></audio>
+  <audio id="prankSound" src="scream.mp3" muted playsinline></audio>
   <script>
     const button = document.getElementById('prankButton');
     const image = document.getElementById('prankImage');
@@ -47,6 +47,7 @@
     button.addEventListener('click', () => {
       button.style.display = 'none';
       image.style.display = 'block';
+      sound.muted = false;  // Відключаємо mute після кліку
       sound.play();
     });
   </script>
